@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Marketplace/ecommerce-v1.3-haiku"
+		},
+		{
+			"path": "../ecommerce-template001"
+		}
+	],
+	"settings": {
+	}
+}
