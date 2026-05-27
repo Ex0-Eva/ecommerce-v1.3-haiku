@@ -1,0 +1,22 @@
+name: Sync to Marketplace
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NeuralLink repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Marketplace repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote add marketplace https://x-access-token:${{ secrets.MARKETPLACE_TOKEN }}@github.com/Ex0-Adam/ecommerce-v1.3-haiku.git
+          git push marketplace main --force
