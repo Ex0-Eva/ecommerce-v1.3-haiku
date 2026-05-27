@@ -1,0 +1,103 @@
+/* ============================================================
+   MINIMAL THEME — Zen White
+   ============================================================ */
+
+:root.theme-minimal {
+  --background: #ffffff;
+  --foreground: #111827;
+  --radius: 0.5rem;
+}
+
+/* ── Base ── */
+html.theme-minimal,
+html.theme-minimal body {
+  background-color: #fafafa !important;
+  color: #111827 !important;
+}
+
+/* ── Backgrounds ── */
+html.theme-minimal .bg-white        { background-color: #ffffff !important; }
+html.theme-minimal .bg-slate-50,
+html.theme-minimal .bg-slate-100    { background-color: #f9fafb !important; }
+html.theme-minimal .bg-slate-200    { background-color: #f3f4f6 !important; }
+
+/* ── Cards — ใช้ tag article/aside และ class ที่ชัดเจน ไม่ครอบ button ── */
+html.theme-minimal article,
+html.theme-minimal aside {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* ── Text ── */
+html.theme-minimal .text-slate-900,
+html.theme-minimal .text-slate-800  { color: #111827 !important; }
+html.theme-minimal .text-slate-700,
+html.theme-minimal .text-slate-600  { color: #374151 !important; }
+html.theme-minimal .text-slate-500,
+html.theme-minimal .text-slate-400  { color: #9ca3af !important; }
+html.theme-minimal h1,
+html.theme-minimal h2,
+html.theme-minimal h3 {
+  color: #111827 !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ── Header ── */
+html.theme-minimal header {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+/* ── Buttons — เฉพาะปุ่มที่มี bg เข้มเท่านั้น ไม่แตะปุ่ม outline/ghost ── */
+html.theme-minimal a[class*="bg-slate-900"],
+html.theme-minimal button[class*="bg-slate-900"] {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  border-radius: 0.375rem !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
+html.theme-minimal a[class*="bg-slate-900"]:hover,
+html.theme-minimal button[class*="bg-slate-900"]:hover {
+  opacity: 0.85 !important;
+}
+
+/* ── Inputs ── */
+html.theme-minimal input:not([type="color"]),
+html.theme-minimal textarea,
+html.theme-minimal select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #111827 !important;
+  border-radius: 0.375rem !important;
+}
+html.theme-minimal input:not([type="color"]):focus,
+html.theme-minimal textarea:focus,
+html.theme-minimal select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06) !important;
+  outline: none !important;
+}
+
+/* ── Borders ── */
+html.theme-minimal .border-slate-200,
+html.theme-minimal .border-slate-100 { border-color: #e5e7eb !important; }
+
+/* ── Badges ── */
+html.theme-minimal .bg-purple-100 { background-color: #f3e8ff !important; }
+html.theme-minimal .bg-green-100  { background-color: #dcfce7 !important; }
+html.theme-minimal .bg-blue-100   { background-color: #dbeafe !important; }
+html.theme-minimal .bg-amber-100  { background-color: #fef3c7 !important; }
+html.theme-minimal .bg-red-100    { background-color: #fee2e2 !important; }
+
+/* ── Shadows ── */
+html.theme-minimal .shadow-lg,
+html.theme-minimal .shadow-xl { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07) !important; }
+
+/* ── Table ── */
+html.theme-minimal table thead          { background-color: #f9fafb !important; }
+html.theme-minimal table tbody tr:hover { background-color: #f9fafb !important; }

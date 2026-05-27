@@ -1,0 +1,146 @@
+/* ============================================================
+   CYBERPUNK THEME — Neon Night
+   ============================================================ */
+
+:root.theme-cyberpunk {
+  --primary: #00ff41;
+  --secondary: #ff00ff;
+  --background: #0a0a0f;
+  --foreground: #e0ffe0;
+  --radius: 0px;
+}
+
+/* ── Base ── */
+html.theme-cyberpunk,
+html.theme-cyberpunk body {
+  background-color: #0a0a0f !important;
+  color: #e0ffe0 !important;
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.04) 1px, transparent 1px) !important;
+  background-size: 40px 40px !important;
+}
+
+/* ── All backgrounds → dark ── */
+html.theme-cyberpunk .bg-white,
+html.theme-cyberpunk .bg-slate-50,
+html.theme-cyberpunk .bg-slate-100,
+html.theme-cyberpunk .bg-slate-200 {
+  background-color: #0f0f1a !important;
+}
+
+/* ── Cards / sections ── */
+html.theme-cyberpunk .rounded-2xl,
+html.theme-cyberpunk .rounded-3xl,
+html.theme-cyberpunk .rounded-custom,
+html.theme-cyberpunk article,
+html.theme-cyberpunk aside {
+  background-color: #0f0f1a !important;
+  border: 1px solid rgba(0, 255, 65, 0.4) !important;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.15), inset 0 0 30px rgba(0, 255, 65, 0.03) !important;
+  border-radius: 0 !important;
+}
+
+/* ── Text ── */
+html.theme-cyberpunk .text-slate-900,
+html.theme-cyberpunk .text-slate-800,
+html.theme-cyberpunk .text-slate-700 {
+  color: #00ff41 !important;
+}
+html.theme-cyberpunk .text-slate-600,
+html.theme-cyberpunk .text-slate-500,
+html.theme-cyberpunk .text-slate-400 {
+  color: rgba(0, 255, 65, 0.6) !important;
+}
+html.theme-cyberpunk h1,
+html.theme-cyberpunk h2,
+html.theme-cyberpunk h3 {
+  color: #00ff41 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  letter-spacing: 0.05em;
+}
+
+/* ── Header ── */
+html.theme-cyberpunk header {
+  background: rgba(10, 10, 15, 0.97) !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.5) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* ── Buttons ── */
+html.theme-cyberpunk a[class*="bg-slate-900"],
+html.theme-cyberpunk button[class*="bg-slate-900"],
+html.theme-cyberpunk a[class*="bg-primary"],
+html.theme-cyberpunk button[class*="bg-primary"] {
+  background-color: transparent !important;
+  color: #00ff41 !important;
+  border: 1px solid #00ff41 !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700 !important;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.3) !important;
+  transition: box-shadow 0.2s, background-color 0.2s !important;
+}
+html.theme-cyberpunk a[class*="bg-slate-900"]:hover,
+html.theme-cyberpunk button[class*="bg-slate-900"]:hover {
+  background-color: rgba(0, 255, 65, 0.1) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.5) !important;
+}
+
+/* ── Inputs ── */
+html.theme-cyberpunk input,
+html.theme-cyberpunk textarea,
+html.theme-cyberpunk select {
+  background-color: #0a0a0f !important;
+  border: 1px solid rgba(0, 255, 65, 0.4) !important;
+  color: #00ff41 !important;
+  border-radius: 0 !important;
+}
+html.theme-cyberpunk input:focus,
+html.theme-cyberpunk textarea:focus,
+html.theme-cyberpunk select:focus {
+  border-color: #00ff41 !important;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+  outline: none !important;
+}
+html.theme-cyberpunk input::placeholder,
+html.theme-cyberpunk textarea::placeholder {
+  color: rgba(0, 255, 65, 0.3) !important;
+}
+
+/* ── Borders / dividers ── */
+html.theme-cyberpunk .border-slate-200,
+html.theme-cyberpunk .border-slate-100 {
+  border-color: rgba(0, 255, 65, 0.2) !important;
+}
+html.theme-cyberpunk .divide-slate-100 > * + * {
+  border-color: rgba(0, 255, 65, 0.15) !important;
+}
+
+/* ── Badges ── */
+html.theme-cyberpunk .bg-purple-100 { background-color: rgba(255, 0, 255, 0.15) !important; }
+html.theme-cyberpunk .text-purple-700 { color: #ff00ff !important; }
+html.theme-cyberpunk .bg-green-100 { background-color: rgba(0, 255, 65, 0.15) !important; }
+html.theme-cyberpunk .text-green-700 { color: #00ff41 !important; }
+html.theme-cyberpunk .bg-blue-100 { background-color: rgba(0, 200, 255, 0.15) !important; }
+html.theme-cyberpunk .text-blue-700 { color: #00c8ff !important; }
+html.theme-cyberpunk .bg-amber-100 { background-color: rgba(255, 200, 0, 0.15) !important; }
+html.theme-cyberpunk .text-amber-700 { color: #ffc800 !important; }
+
+/* ── Scrollbar ── */
+html.theme-cyberpunk ::-webkit-scrollbar { width: 6px; }
+html.theme-cyberpunk ::-webkit-scrollbar-track { background: #0a0a0f; }
+html.theme-cyberpunk ::-webkit-scrollbar-thumb { background: rgba(0, 255, 65, 0.4); }
+
+/* ── Glitch animation on h1 ── */
+@keyframes cp-flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.8; }
+  97% { opacity: 1; }
+  98% { opacity: 0.6; }
+}
+html.theme-cyberpunk h1 {
+  animation: cp-flicker 6s infinite;
+}
