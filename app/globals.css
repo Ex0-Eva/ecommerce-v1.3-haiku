@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-
+/* ── CSS Variables (Shop default — Modern theme) ── */
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
@@ -19,12 +19,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── ลบ dark mode auto ออก — ใช้ theme system แทน ── */
+/* ไม่มี @media (prefers-color-scheme: dark) เพราะ theme engine จัดการเอง */
 
 body {
   background: var(--background);
@@ -32,3 +28,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ── Admin area — ไม่ได้รับผลจาก shop theme ── */
+/* theme CSS ใน styles/themes/ ใช้ html.theme-* selector
+   ซึ่งจะไม่ครอบ .admin-layout เพราะ admin layout ไม่มี theme class */

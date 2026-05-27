@@ -1,0 +1,207 @@
+/* ============================================================
+   ADMIN STYLES — Fixed, ไม่ขึ้นกับ shop theme
+   แก้ไขที่ไฟล์นี้ไฟล์เดียวสำหรับ admin UI ทั้งหมด
+   ============================================================ */
+
+/* ── Reset theme overrides สำหรับ admin ── */
+/* ป้องกัน shop theme CSS ไหลเข้า admin */
+.admin-layout,
+.admin-layout * {
+  /* ยกเลิก theme animation */
+  animation: none !important;
+}
+
+/* ── Admin color palette (slate-based, always light) ── */
+.admin-layout {
+  --admin-bg: #f8fafc;
+  --admin-surface: #ffffff;
+  --admin-border: #e2e8f0;
+  --admin-text: #0f172a;
+  --admin-text-muted: #64748b;
+  --admin-text-subtle: #94a3b8;
+  --admin-primary: #0f172a;
+  --admin-primary-hover: #1e293b;
+  --admin-accent: #3b82f6;
+  --admin-danger: #ef4444;
+  --admin-success: #22c55e;
+  --admin-warning: #f59e0b;
+  --admin-sidebar-width: 16rem;
+}
+
+/* ── Sidebar ── */
+.admin-sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  transition: background-color 0.15s, color 0.15s;
+  text-decoration: none;
+}
+
+.admin-nav-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.admin-nav-item.active {
+  background-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.admin-nav-item.danger {
+  color: #dc2626;
+}
+
+.admin-nav-item.danger:hover {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+/* ── Top bar ── */
+.admin-topbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #e2e8f0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Cards / Panels ── */
+.admin-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Buttons ── */
+.admin-btn-primary {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.admin-btn-primary:hover {
+  background-color: #1e293b;
+}
+
+.admin-btn-danger {
+  background-color: transparent;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.admin-btn-danger:hover {
+  background-color: #fef2f2;
+}
+
+/* ── Tables ── */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.admin-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* ── Status badges ── */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.admin-badge-green  { background-color: #dcfce7; color: #15803d; }
+.admin-badge-blue   { background-color: #dbeafe; color: #1d4ed8; }
+.admin-badge-amber  { background-color: #fef3c7; color: #b45309; }
+.admin-badge-red    { background-color: #fee2e2; color: #b91c1c; }
+.admin-badge-slate  { background-color: #f1f5f9; color: #475569; }
+.admin-badge-purple { background-color: #f3e8ff; color: #7e22ce; }
+
+/* ── Forms ── */
+.admin-input {
+  width: 100%;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  color: #0f172a;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.admin-input:focus {
+  border-color: #94a3b8;
+  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.15);
+}
+
+.admin-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.375rem;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 1023px) {
+  .admin-sidebar-mobile {
+    position: fixed;
+    inset-y: 0;
+    left: 0;
+    z-index: 50;
+    width: 16rem;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .admin-sidebar-mobile.open {
+    transform: translateX(0);
+  }
+}

@@ -1,5 +1,6 @@
 /* ============================================================
    CYBERPUNK THEME — Neon Night
+   ใช้ได้เฉพาะ shop (html.theme-cyberpunk) ไม่ครอบ admin
    ============================================================ */
 
 :root.theme-cyberpunk {
@@ -11,7 +12,6 @@
 }
 
 /* ── Base ── */
-html.theme-cyberpunk,
 html.theme-cyberpunk body {
   background-color: #0a0a0f !important;
   color: #e0ffe0 !important;
@@ -21,20 +21,17 @@ html.theme-cyberpunk body {
   background-size: 40px 40px !important;
 }
 
-/* ── All backgrounds → dark ── */
-html.theme-cyberpunk .bg-white,
-html.theme-cyberpunk .bg-slate-50,
-html.theme-cyberpunk .bg-slate-100,
-html.theme-cyberpunk .bg-slate-200 {
+/* ── Backgrounds — เฉพาะ shop ── */
+html.theme-cyberpunk .bg-white:not([class*="admin"]),
+html.theme-cyberpunk .bg-slate-50:not([class*="admin"]),
+html.theme-cyberpunk .bg-slate-100:not([class*="admin"]),
+html.theme-cyberpunk .bg-slate-200:not([class*="admin"]) {
   background-color: #0f0f1a !important;
 }
 
-/* ── Cards / sections ── */
-html.theme-cyberpunk .rounded-2xl,
-html.theme-cyberpunk .rounded-3xl,
-html.theme-cyberpunk .rounded-custom,
+/* ── Cards — เฉพาะ article/aside ใน shop ── */
 html.theme-cyberpunk article,
-html.theme-cyberpunk aside {
+html.theme-cyberpunk aside:not([class*="admin"]) {
   background-color: #0f0f1a !important;
   border: 1px solid rgba(0, 255, 65, 0.4) !important;
   box-shadow: 0 0 12px rgba(0, 255, 65, 0.15), inset 0 0 30px rgba(0, 255, 65, 0.03) !important;
@@ -60,8 +57,8 @@ html.theme-cyberpunk h3 {
   letter-spacing: 0.05em;
 }
 
-/* ── Header ── */
-html.theme-cyberpunk header {
+/* ── Header (shop only) ── */
+html.theme-cyberpunk header:not([class*="admin"]) {
   background: rgba(10, 10, 15, 0.97) !important;
   border-bottom: 1px solid rgba(0, 255, 65, 0.5) !important;
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.2) !important;
@@ -110,7 +107,7 @@ html.theme-cyberpunk textarea::placeholder {
   color: rgba(0, 255, 65, 0.3) !important;
 }
 
-/* ── Borders / dividers ── */
+/* ── Borders ── */
 html.theme-cyberpunk .border-slate-200,
 html.theme-cyberpunk .border-slate-100 {
   border-color: rgba(0, 255, 65, 0.2) !important;

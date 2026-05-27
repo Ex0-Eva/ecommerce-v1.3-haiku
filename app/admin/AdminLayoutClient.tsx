@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { Session } from "next-auth";
+import "@/styles/admin.css";
 
 const navItems = [
   { href: "/admin/dashboard", icon: "📊", label: "Dashboard" },
@@ -115,7 +116,7 @@ export default function AdminLayoutClient({
   );
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 admin-layout">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
