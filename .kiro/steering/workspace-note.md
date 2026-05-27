@@ -28,6 +28,8 @@ inclusion: always
 
 **Kiro จะ copy ไฟล์ที่แก้ไขไปยัง Marketplace ทุกครั้งหลังแก้โค้ดเสร็จ**
 
+> ⚠️ Kiro แก้ไฟล์อย่างเดียว — ไม่ต้อง push ให้ คุณ push เอง
+
 ---
 
 ## โปรเจกต์ที่ 2 — ecommerce-template001
