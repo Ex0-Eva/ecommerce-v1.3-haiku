@@ -88,7 +88,7 @@
 - [ ] **Vercel Environment Variables** — ต้องเพิ่ม `DATABASE_URL` ใน Vercel dashboard ด้วย
 
 ### ecommerce-template001
-- [ ] **Push ขึ้น GitHub** (`Ex0-Adam/ecommerce-template001`) — commit ทำแล้วแต่ยังไม่ push
+- [x] **Push ขึ้น GitHub** (`Ex0-Adam/ecommerce-template001`) ✅ Done
 - [ ] **Admin layout redesign** — ยังใช้ layout เก่า ยังไม่ได้ redesign เหมือน v1.3-haiku
 
 ---
