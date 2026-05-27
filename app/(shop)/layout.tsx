@@ -3,6 +3,8 @@ import SiteHeader from "@/components/shop/layout/site-header";
 import SiteFooter from "@/components/shop/layout/site-footer";
 import ThemePreviewManager from "@/components/shop/theme/theme-preview-manager";
 import { getSiteConfig } from "@/lib/siteConfig";
+
+export const dynamic = "force-dynamic";
 import "@/styles/themes/cyberpunk.css";
 import "@/styles/themes/minimal.css";
 import "@/styles/themes/warm.css";

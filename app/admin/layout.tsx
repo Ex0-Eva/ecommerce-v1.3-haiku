@@ -3,6 +3,8 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 import { authOptions } from "@/app/api/auth/[...nextauth]/auth";
 
 export const metadata = {

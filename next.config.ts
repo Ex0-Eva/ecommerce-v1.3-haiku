@@ -1,19 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* 
-    Proxy Configuration:
-    - ใช้ Proxy แทน Middleware ตามกฎของโครงการ เพื่อประสิทธิภาพและความปลอดภัย
-    - Routing และ Authentication บางส่วนควรจัดการที่ระดับ Proxy (เช่น Cloudflare, Nginx)
-  */
   async rewrites() {
-    return [
-      // ตัวอย่างการทำ Proxy ไปยัง API Backend ภายนอก (ถ้ามี)
-      // {
-      //   source: '/api/external/:path*',
-      //   destination: 'https://api.external.com/:path*',
-      // },
-    ];
+    return [];
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // ป้องกัน Node.js-only modules ถูก bundle เข้า client-side
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        dns: false,
+        net: false,
+        tls: false,
+        pg: false,
+        "pg-native": false,
+        "util/types": false,
+      };
+    }
+    return config;
   },
 };
 
