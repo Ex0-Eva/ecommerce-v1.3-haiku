@@ -72,6 +72,8 @@ export default function AdminProductsPage() {
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   const loadProducts = async () => {
     setLoading(true);
@@ -129,6 +131,7 @@ export default function AdminProductsPage() {
     setHasVariants(false);
     setVariants([]);
     setSaveError(null);
+    setUploadError(null);
   };
 
   const handleChange = (
@@ -139,6 +142,39 @@ export default function AdminProductsPage() {
       ...prev,
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setUploadError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+        credentials: "include",
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "อัพโหลดไม่สำเร็จ");
+      }
+
+      const { url } = await res.json();
+      setForm((prev) => ({ ...prev, image_url: url }));
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "เกิดข้อผิดพลาด";
+      setUploadError(message);
+    } finally {
+      setUploading(false);
+      if (e.target) e.target.value = "";
+    }
   };
 
   const handleSave = async () => {
@@ -442,23 +478,34 @@ export default function AdminProductsPage() {
 
               {/* รูปภาพ */}
               <div>
-                <label className={labelClass}>URL รูปภาพสินค้า</label>
-                <input
-                  name="image_url"
-                  value={form.image_url}
-                  onChange={handleChange}
-                  placeholder="https://..."
-                  className={inputClass}
-                />
+                <label className={labelClass}>อัพโหลดรูปภาพสินค้า</label>
+                <div className="mt-1 flex items-center gap-3">
+                  <label className="flex flex-1 cursor-pointer items-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-600 transition hover:border-slate-400 hover:bg-slate-100">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    {uploading ? "กำลังอัพโหลด..." : "เลือกรูปภาพ"}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileUpload}
+                      disabled={uploading}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+                {uploadError && (
+                  <p className="mt-1.5 text-xs text-red-600">❌ {uploadError}</p>
+                )}
                 {form.image_url && (
-                  <img
-                    src={form.image_url}
-                    alt="preview"
-                    className="mt-2 h-24 w-24 rounded-xl object-cover border border-slate-200"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
-                  />
+                  <div className="mt-3">
+                    <p className="text-xs text-slate-500">ตัวอย่าง:</p>
+                    <img
+                      src={form.image_url}
+                      alt="preview"
+                      className="mt-2 h-24 w-24 rounded-xl object-cover border border-slate-200"
+                    />
+                  </div>
                 )}
               </div>
               <div>

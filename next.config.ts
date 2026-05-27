@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "imgur.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "**.googleusercontent.com" },
+      // Allow localhost and relative paths for uploaded images
+      { protocol: "http", hostname: "localhost" },
+      { protocol: "http", hostname: "127.0.0.1" },
     ],
   },
   async rewrites() {
