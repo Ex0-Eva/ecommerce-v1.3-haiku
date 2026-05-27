@@ -18,11 +18,15 @@ inclusion: always
 - ห้ามแก้ไขไฟล์ใน Marketplace โดยตรง เพราะจะถูก overwrite ตอน sync
 - ถ้าไม่แน่ใจว่าอยู่โฟลเดอร์ไหน ให้ดู path ก่อนทำงานทุกครั้ง
 
-## Sync Workflow
+## Sync Workflow (Manual — ไม่ใช้ GitHub Actions)
 
 ```
-NeuralLink (แก้ไข) → git push origin main → GitHub Actions → push ไป Marketplace → Vercel deploy
+1. แก้โค้ดที่ NeuralLink
+2. Kiro copy ไฟล์ที่เปลี่ยนไปยัง Marketplace ให้อัตโนมัติ
+3. คุณ push ทั้ง 2 repo เอง
 ```
+
+**Kiro จะ copy ไฟล์ที่แก้ไขไปยัง Marketplace ทุกครั้งหลังแก้โค้ดเสร็จ**
 
 ---
 
